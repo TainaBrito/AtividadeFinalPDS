@@ -1,6 +1,6 @@
 # AtividadeFinalPDS
 
-- INTEGRANDES - 
+    - INTEGRANDES - 
 * Júlia Medeiros do Nascimento - 20201214010028
 * Maria Clara Araújo - 20201214010035
 * Raquel Gabrielly do Nascimento - 20201214010024
