@@ -1,6 +1,6 @@
 # AtividadeFinalPDS
 
-    - INTEGRANDES - 
+    - INTEGRANTES - 
 * Júlia Medeiros do Nascimento - 20201214010028
 * Maria Clara Araújo - 20201214010035
 * Raquel Gabrielly do Nascimento - 20201214010024
@@ -8,7 +8,7 @@
   
 # TB Makes - Controle de Maquiagens
 
-A TB Makes é um projeto de software que está sendo criado pela estudante Tainá Brito, que cursa o ensino médio técnico integrado em Informática no IFRN. O objetivo desse projeto é ajudar a loja de maquiagem TB Makes a gerenciar seu estoque de produtos de maquiagem. O software está sendo desenvolvido em linguagem Python e utilizará o PostgreSQL 15.1 para armazenar dados, sendo executado no local.
+A TB Makes é um projeto de software que está sendo criado por estudantes que cursam o ensino médio técnico integrado em Informática no IFRN no Campus Avançado Parelhas. O objetivo desse projeto é ajudar na dinâmica de funcionamento da loja física de maquiagem TB Makes ao seu gerenciamento de estoque de produtos de maquiagem. O software está sendo desenvolvido em linguagem Python e utilizará o PostgreSQL 15.1 para armazenar dados, sendo executado no local.
 
 # Necessidade do Cliente
 
