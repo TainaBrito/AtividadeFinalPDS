@@ -8,7 +8,7 @@
   
 # TB Makes - Controle de Maquiagens
 
-A TB Makes é um projeto de software que está sendo implementado por estudantes que cursam o ensino médio técnico integrado em Informática no Instituto Federal de Educação, Ciências e Tecnologias, Pesquisa e Extenções do Rio Grande do Norte (IFRN) - Campus Avançado Parelhas. O objetivo desse projeto é ajudar na dinâmica de funcionamento da loja física de maquiagem TB Makes, como também no gerenciamento de estoque de produtos de maquiagem. A aplicação do desenvolvimento do software está sendo desenvolvida em: 
+A TB Makes é um projeto de software que está sendo implementado por estudantes que cursam o ensino médio técnico integrado em Informática no Instituto Federal de Educação, Ciências, Tecnologias, Pesquisa e Extensões do Rio Grande do Norte (IFRN) - Campus Avançado Parelhas. O objetivo desse projeto é ajudar na dinâmica de funcionamento da loja física de maquiagem TB Makes, como também no gerenciamento de estoque de produtos de maquiagem. A aplicação do desenvolvimento do software está sendo desenvolvida em: 
 
 Linguagem de back-end e front-end: Python;
 Banco de dados: PostgreSQL 15.1;
