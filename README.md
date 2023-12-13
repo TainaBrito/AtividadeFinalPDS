@@ -11,9 +11,11 @@
 A TB Makes é um projeto de software que está sendo implementado por estudantes que cursam o ensino médio técnico integrado em Informática no Instituto Federal de Educação, Ciências, Tecnologias, Pesquisa e Extensões do Rio Grande do Norte (IFRN) - Campus Avançado Parelhas. O objetivo desse projeto é ajudar na dinâmica de funcionamento da loja física de maquiagem TB Makes, como também no gerenciamento de estoque de produtos de maquiagem. A aplicação do desenvolvimento do software está sendo desenvolvida em: 
 
 Linguagem de back-end e front-end: Python;
-Banco de dados: PostgreSQL 15;
+Banco de dados: PostgreSQL 15.1;
 Arquitetura: MVC (Model, View, Controller);
 Ambiente de desenvolvimento: VSCode.
+
+Utilizando-se da camada MVC, a qual os funcionários farão boa parte do controle a partir dele e do Model, fazendo alterações nos produtos de acordo com o estoque e assim então, sendo visualizado pelos clientes e demais usuários a partir do View. Fazendo usos de bibliotecas do Python as quais serão de auxílio para desing da interface do front-end e outras, também, da desenvoltura do back-end que interaja com o banco de dados.
 
 # Necessidade do Cliente
 
