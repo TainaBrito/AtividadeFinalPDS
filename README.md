@@ -39,6 +39,13 @@ Esse sistema de controle de maquiagens proporcionará aos funcionários um conhe
 
 Existindo uma visualização simples e objetiva para facilitar o uso, o usuário deverá selecionar a aba correspondente ao que deseja acessar. Para realizar as operações de adição, atualização e remoção de maquiagens, o usuário deverá fornecer o código, nome, quantidade de produtos e data da ação, e confirmar a operação por meio de um botão na parte inferior. Na aba de visualização, uma tabela exibirá todos os produtos de maquiagem cadastrados, facilitando a organização do sistema e gerando praticidade aos usuários.
 
+# Uso
+* Criação de login para entrada
+* Pesquisa do produto desejado
+* Visualização de disponibilidade
+* Seleção do produto
+* Preenchimento dos requisitos para compra
+
 # Requisitos
 
 ## Requisitos Funcionais
