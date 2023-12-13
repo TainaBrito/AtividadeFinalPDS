@@ -1,10 +1,10 @@
 # AtividadeFinalPDS
 
     - INTEGRANTES - 
-* Júlia Medeiros do Nascimento - 20201214010028,
-* Maria Clara Araújo dos Santos - 20201214010035,
-* Raquel Gabrielly do Nascimento - 20201214010024,
-* Tainá Brito de Medeiros - 20201214010015.
+* Júlia Medeiros do Nascimento - 20201214010028
+* Maria Clara Araújo dos Santos - 20201214010035
+* Raquel Gabrielly do Nascimento - 20201214010024
+* Tainá Brito de Medeiros - 20201214010015
   
 # TB Makes - Controle de Maquiagens
 
