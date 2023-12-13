@@ -17,11 +17,11 @@ Ambiente de desenvolvimento: VSCode.
 
 # Necessidade do Cliente
 
-A loja TB Makes é um espaço dedicado à venda e teste de produtos de maquiagem, com o objetivo de proporcionar uma experiência segura e confortável às clientes, reforçando a autoestima delas.
+A loja TB Makes é um espaço dedicado à venda e teste de produtos de maquiagem, com o objetivo de proporcionar uma experiência segura e confortável às clientes, reforçando a autoestima delas e criando um atendimento individualizado para as necessidades de cada cliente.
 
 Como uma classificação de loja de cosméticos específica, existem necessidades a serem supridas para que seu funcionamento seja eficiente. 
 
-Durante uma visita ao local, identificou-se questões e situações de carência quanto ao sistema de vendas, cada passa à passo. Logo, ficou claro que melhorar o controle de vendas e o cadastro de produtos era importante. Portanto, o projeto tem como finalidade automatizar a gestão de maquiagens, armazenando os dados em um banco de dados para facilitar o trabalho dos funcionários, permitindo consultas e a manipulação de informações. Funcionalidades e requesitos serão implementados para a criação do sistema. 
+Durante uma visita ao local, identificou-se questões e situações de carência quanto ao sistema de vendas, cada passo à passo. Logo, ficou claro que melhorar o controle de vendas e o cadastro de produtos era importante. Portanto, o projeto tem como finalidade automatizar a gestão de maquiagens, armazenando os dados em um banco de dados para facilitar o trabalho dos funcionários, permitindo consultas e a manipulação de informações. Funcionalidades e requesitos serão implementados para a criação do sistema. 
 
 Esse sistema de controle de maquiagens proporcionará aos funcionários um conhecimento abrangente das operações na TB Makes, mesmo quando não estão fisicamente no ambiente, irá facilitar o aumento das vendas, sua eficência e proporcionar melhores manuseios para os pedidos e compras já realizadas. Isso possibilitará o acompanhamento do estoque de maquiagens disponíveis para venda (por meio de IDs), a categorização dos tipos de maquiagem (por meio dos nomes) e o controle da quantidade de maquiagens em estoque (por meio do estado). Além disso, o sistema ajudará a prever a necessidade de novas compras, tornando possível o acompanhamento externo da loja. Sendo assim, frisando acima de tudo o controle das informações de cada venda. 
 
