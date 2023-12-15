@@ -12,3 +12,9 @@ class MaquiagensDAO:
 
         self.cursor.execute(sql)
         self.conexao.commit()
+
+    def atualizar_maquiagens(self, maquiagens):
+        sql = f"update maquiagens set nome = '{maquiagens.getNome()}', marca = '{maquiagens.getMarca()}', preco = '{maquiagens.getPreço()}' where codigo = {maquiagens.getCodigo()}"
+
+        self.cursor.execute(sql)
+        self.conexao.commit()
