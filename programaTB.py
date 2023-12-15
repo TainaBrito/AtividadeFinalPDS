@@ -6,3 +6,9 @@ class MaquiagensDAO:
         self.conexao = psycopg2.connect(database="TBMakes", user="adm_tbmakes", password="admtbmakes", host="tbmakes.cnbkkiavari1.us-east-1.rds.amazonaws.com", port="5432")
 
         self.cursor = self.conexao.cursor()
+
+    def remover_maquiagens(self,maquiagens):
+        sql = f"delete from maquiagens where codigo = {maquiagens.getCodigo()}"
+
+        self.cursor.execute(sql)
+        self.conexao.commit()
