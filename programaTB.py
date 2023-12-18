@@ -18,3 +18,15 @@ class MaquiagensDAO:
 
         self.cursor.execute(sql)
         self.conexao.commit()
+        
+    def visualizar(self):
+            sql = "select * from maquiagens"
+            self.cursor.execute(sql)
+
+            resultado = self.cursor.fetchall()
+            texto = ""
+
+            for linha in resultado:
+                texto = texto + f"Código: {str(linha[0])} \nNome: {str(linha[1])} \nMarca: {str(linha[2])} \nPreço: {str(linha[3])} \n \n"
+    
+            return texto
