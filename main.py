@@ -33,3 +33,35 @@ def JanelaPrincipal():
     def cadastrar_produto():
         
         messagebox.showinfo(title="Sucesso!",message="O produto foi cadastrado com sucesso!")
+
+codigo = aba1_CodigoEntry.get()
+        nome = aba1_NomeEntry.get()
+        preco = aba1_PrecoEntry.get()
+        estado = aba1_EstadoEntry.get()
+
+        aba1_CodigoEntry.delete(0,'end')
+        aba1_NomeEntry.delete(0,'end')
+        aba1_PrecoEntry.delete(0,'end')
+        aba1_EstadoEntry.delete(0,'end')
+
+        sql1 = f"insert into Maquiagens values ({codigo},'{nome}','{preco}','{estado}', '{date.today()}')"
+        cursor.execute(sql1)
+        conexao.commit()
+
+    #Remover produtos
+    def remover_produto():
+        
+        messagebox.showinfo(title="Sucesso!",message="O produto foi removido com sucesso!")
+        codigo = aba4_CodigoEntry.get()
+        aba4_CodigoEntry.delete(0,'end')
+        sql2 = f"delete from Maquiagens where codigo = {codigo}"
+        cursor.execute(sql2)
+        conexao.commit()
+    
+    #Limpar Dados das abas
+    def Limpar_aba1():
+    
+        aba1_CodigoEntry.delete(0,'end')
+        aba1_NomeEntry.delete(0,'end')
+        aba1_PrecoEntry.delete(0,'end')
+        aba1_EstadoEntry.delete(0,'end')
