@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 from maquiagemBean import MaquiagemBean
-from programaTB import MaquiagemDAO
+from programaTB import MaquiagensDAO
 
 class MaquiagemController:
 
