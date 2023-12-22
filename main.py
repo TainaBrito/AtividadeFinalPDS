@@ -9,7 +9,7 @@ import psycopg2
 TelaLogin = customtkinter.CTk()
 TelaLogin.title("TB Makes")
 TelaLogin.geometry("490x560+500+130")
-TelaLogin.iconbitmap('Sistema\\imagens\\TBMakes-icone.ico')
+TelaLogin.iconbitmap('Sistema\\imagens\\C:\Users\20201214010015\Downloads\WhatsApp Image 2023-12-22 at 07.16.55.jpeg')
 TelaLogin.resizable(False, False)
 customtkinter.set_appearance_mode("Light")
 
@@ -21,7 +21,7 @@ def JanelaPrincipal():
 
     janela = customtkinter.CTk()
     janela.title('TB Makes')
-    janela.iconbitmap('Sistema\\imagens\\TBMakes-icone.ico')
+    janela.iconbitmap('Sistema\\imagens\\C:\Users\20201214010015\Downloads\WhatsApp Image 2023-12-22 at 07.16.55.jpeg')
     janela.resizable(False, False)
 
     gerenciadorAba = ttk.Notebook(janela)
