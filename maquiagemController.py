@@ -11,7 +11,7 @@ class MaquiagemController:
         maquiagem.setCodigo(cod)
         maquiagem.setNome(n)
         maquiagem.setPreco(p)
-        maquinario.setEstado(est)
+        maquiagem.setEstado(est)
 
         self.__maquiagem_dao.inserir_maquiagem(maquiagem)
 
