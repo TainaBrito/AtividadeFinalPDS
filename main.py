@@ -29,12 +29,12 @@ def JanelaPrincipal():
     conexao = psycopg2.connect(database="tbmakes", user="adm_tbmakes", password="admtbmakes", host="tbmakes.cnbkkiavari1.us-east-1.rds.amazonaws.com", port="5432")
     cursor = conexao.cursor()
     
-#Cadastrar Produtos na Tabela
-def cadastrar_produto():
+#Cadastrar Maquiagens na Tabela
+def cadastrar_maquiagem():
         
-     messagebox.showinfo(title="Sucesso!",message="O produto foi cadastrado com sucesso!")
+     messagebox.showinfo(title="Sucesso!",message="A maquiagem foi cadastrada com sucesso!")
 
-    codigo = aba1_CodigoEntry.get()
+        codigo = aba1_CodigoEntry.get()
         nome = aba1_NomeEntry.get()
         preco = aba1_PrecoEntry.get()
         estado = aba1_EstadoEntry.get()
@@ -48,10 +48,10 @@ def cadastrar_produto():
         cursor.execute(sql1)
         conexao.commit()
 
-#Remover produtos
-def remover_produto():
+#Remover Maquiagens
+def remover_maquiagem():
         
-    messagebox.showinfo(title="Sucesso!",message="O produto foi removido com sucesso!")
+    messagebox.showinfo(title="Sucesso!",message="A maquiagem foi removida com sucesso!")
     codigo = aba4_CodigoEntry.get()
     aba4_CodigoEntry.delete(0,'end')
     sql2 = f"delete from Maquiagens where codigo = {codigo}"
@@ -77,13 +77,13 @@ def Limpar_aba4():
     
     aba4_CodigoEntry.delete(0,'end')
 
-#Atualizar Produtos
-def atualizar_produto():
-    messagebox.showinfo(title="Sucesso!",message="O produto foi atualizado com sucesso!")
+#Atualizar Maquiagens
+def atualizar_maquiagem():
+    messagebox.showinfo(title="Sucesso!",message="A maquiagem foi atualizada com sucesso!")
 
     codigo = aba3_CodigoEntry.get()
-    nova_Funcao = aba3_FuncaoEntry.get()
     novo_Preco = aba3_PrecoEntry.get()
+    novo_Estado = aba3_EstadoEntry.get()
     novo_Nome = aba3_NomeEntry.get()
     
     aba3_CodigoEntry.delete(0,'end')
@@ -95,8 +95,8 @@ def atualizar_produto():
     cursor.execute(sql)
     conexao.commit()
     
-#Visualizar Produtos
-def visualizar_produto():
+#Visualizar Maquiagens
+def visualizar_maquiagem():
     sql = "select * from Maquiagens"
     
     cursor.execute(sql)
@@ -106,14 +106,14 @@ def visualizar_produto():
     
     for linha in result:
     
-        texto = texto+f"\n Código do Produto: {str(linha[0])}\n Nome: {str(linha[1])}\n Preço: {str(linha[2])}\n Estado: {str(linha[3])}\n Data de Entrada: {str(linha[4])}\n ---------------------------"
+        texto = texto+f"\n Código da Maquiagem: {str(linha[0])}\n Nome: {str(linha[1])}\n Preço: {str(linha[2])}\n Estado: {str(linha[3])}\n Data de Entrada: {str(linha[4])}\n ---------------------------"
     
     aba2_Texto.delete(1.0,'end')
     aba2_Texto.insert(END, texto)
 
-#Aba 1- Cadastrar Produto
+#Aba 1- Cadastrar Maquiagem
 aba1 = ttk.Frame(gerenciadorAba)
-gerenciadorAba.add(aba1,text="  Cadastrar Produto  ")
+gerenciadorAba.add(aba1,text="  Cadastrar Maquiagem  ")
 gerenciadorAba.pack(expand=1, fill="both")
     
 #Elementos da Aba 1
@@ -136,14 +136,14 @@ aba1_NomeEntry.place(x = 269, y = 335)
 aba1_EstadoEntry = Entry(aba1,bd=0,width=55)
 aba1_EstadoEntry.place(x = 269 , y = 399)
 
-aba1_CadastrarButton = Button(aba1,bd=0,bg="#000B37", width=222, height=60, image=bt_cadastrar, command = cadastrar_produto)
+aba1_CadastrarButton = Button(aba1,bd=0,bg="#000B37", width=222, height=60, image=bt_cadastrar, command = cadastrar_maquiagem)
 aba1_CadastrarButton.place(x = 430 , y = 475)
 aba1_LimparDados = Button(aba1,bd=0,bg="#000B37", width=222, height=60, image=bt_limpar1, command = Limpar_aba1)
 aba1_LimparDados.place(x = 140, y = 475)
 
 #Aba2 - Visualizar Dados
     aba2 = ttk.Frame(gerenciadorAba)
-    gerenciadorAba.add(aba2, text="  Visualizar Produtos  ")
+    gerenciadorAba.add(aba2, text="  Visualizar Maquiagem  ")
     gerenciadorAba.pack(expand=1, fill="both")
 
     #Elementos da Aba 2
@@ -153,14 +153,14 @@ aba1_LimparDados.place(x = 140, y = 475)
 
     bt_visualizar = PhotoImage(file="Sistema\\imagens\\bt-visualizar.png")
 
-    aba2_VisualizarButton = Button(aba2,bg="#000B37", width=236, height=50, image = bt_visualizar, bd=0, command = visualizar_produto)
+    aba2_VisualizarButton = Button(aba2,bg="#000B37", width=236, height=50, image = bt_visualizar, bd=0, command = visualizar_maquiagem)
     aba2_VisualizarButton.place(x = 102, y = 397)
     aba2_Texto = Text(aba2,bd=5)
     aba2_Texto.place(x = 453 , y = 95,width=280,height=410)
     
     #Aba3 - Atualizar Produtos
     aba3 = ttk.Frame(gerenciadorAba)
-    gerenciadorAba.add(aba3, text="  Atualizar Produtos  ")
+    gerenciadorAba.add(aba3, text="  Atualizar Maquiagem  ")
     gerenciadorAba.pack(expand=1, fill="both")
     
     #Elementos da Aba 3
@@ -184,14 +184,14 @@ aba1_LimparDados.place(x = 140, y = 475)
     aba3_EstadoEntry = Entry(aba3,bd=0,width=55)
     aba3_EstadoEntry.place(x = 269 , y = 399)
 
-    aba3_AtualizarButton = Button(aba3,bd=0,bg="#000B37", width=222, height=60, image=bt_atualizar, command = atualizar_produto)
+    aba3_AtualizarButton = Button(aba3,bd=0,bg="#000B37", width=222, height=60, image=bt_atualizar, command = atualizar_maquiagem)
     aba3_AtualizarButton.place(x = 430 , y = 475)
     aba3_LimparDados = Button(aba3,bd=0,bg="#000B37", width=222, height=60, image=bt_limpar3, command = Limpar_aba3)
     aba3_LimparDados.place(x = 140, y = 475)
     
-    #Aba4 - Remover Produto
+    #Aba4 - Remover Maquiagens
     aba4 = ttk.Frame(gerenciadorAba)
-    gerenciadorAba.add(aba4, text="Remover Produto")
+    gerenciadorAba.add(aba4, text="Remover Maquiagem")
     gerenciadorAba.pack(expand=1, fill="both")
 
     fundo_remover = PhotoImage(file="Sistema\\imagens\\fundo-remover.png")
@@ -206,7 +206,7 @@ aba1_LimparDados.place(x = 140, y = 475)
     bt_remover = PhotoImage(file="Sistema\\imagens\\bt-remover.png")
     bt_limpar4 = PhotoImage(file="Sistema\\imagens\\bt-limpar.png")
 
-    aba4_RemoverButton = Button(aba4, width=222, height=50, bd=0,bg="#000B37", image = bt_remover, command = remover_produto )
+    aba4_RemoverButton = Button(aba4, width=222, height=50, bd=0,bg="#000B37", image = bt_remover, command = remover_maquiagem )
     aba4_RemoverButton.place(x = 434 , y = 419)
     aba4_LimparDados = Button(aba4,width=222, height=50, bd=0,bg="#000B37", image = bt_limpar4 , command = Limpar_aba4)
     aba4_LimparDados.place(x = 144, y = 419)
