@@ -33,6 +33,6 @@ class MaquiagensDAO:
             texto = ""
 
             for linha in resultado:
-                texto = texto + f"Código: {str(linha[0])} \nNome: {str(linha[1])} \nMarca: {str(linha[2])} \nPreço: {str(linha[3])} \n \n"
+                texto = texto + f"Código: {str(linha[0])} \nNome: {str(linha[1])} \nEstado: {str(linha[2])} \nPreço: {str(linha[3])} \n \n"
     
             return texto
