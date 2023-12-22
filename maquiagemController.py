@@ -19,5 +19,6 @@ class MaquiagemController:
         maquiagem = MaquiagemBean()
         maquiagem.setCodigo(cod)
         self.__maquiagem_dao.remover_maquiagem(maquiagem)
-        def visualizar(self):
+        
+    def visualizar(self):
         return self.__maquiagem_dao.visualizar()
