@@ -7,6 +7,12 @@ class MaquiagensDAO:
 
         self.cursor = self.conexao.cursor()
 
+     def inserir_maquiagens(self, maquiagens):
+        sql = f"insert into maquiagens values ({maquiagens.getCodigo()}, '{maquiagens.getNome()}', '{maquiagens.getPreco()}', '{maquiagens.getEstado()}')"
+
+        self.cursor.execute(sql)
+        self.conexao.commit()
+         
     def remover_maquiagens(self,maquiagens):
         sql = f"delete from maquiagens where codigo = {maquiagens.getCodigo()}"
 
