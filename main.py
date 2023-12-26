@@ -26,8 +26,7 @@ def JanelaPrincipal():
 
     gerenciadorAba = ttk.Notebook(janela)
 
-    conexao = psycopg2.connect(database="tbmakes", user="adm_tbmakes", password="admtbmakes", host="tbmakes.cnbkkiavari1.us-east-1.rds.amazonaws.com", port="5432")
-    cursor = conexao.cursor()
+   conexão = abrir conexão()
     
 #Cadastrar Maquiagens na Tabela
 def cadastrar_maquiagem():
