@@ -4,7 +4,7 @@ from programaTB import MaquiagensDAO
 class MaquiagemController:
 
     def __init__(self):
-        self.__maquiagem_dao = MaquiagemDAO()
+        self.__maquiagem_dao = MaquiagensDAO()
 
     def inserir(self, cod, n, p, est):
         maquiagem = MaquiagemBean()

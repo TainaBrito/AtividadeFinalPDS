@@ -117,8 +117,8 @@ gerenciadorAba.add(aba1,text="  Cadastrar Maquiagem  ")
 gerenciadorAba.pack(expand=1, fill="both")
     
 #Elementos da Aba 1
-bt_limpar1 = PhotoImage(file="Sistema\\imagens\\bt-limpar.png")
-bt_cadastrar = PhotoImage(file="Sistema\\imagens\\bt-cadastrar.png")
+bt_limpar1 = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-limpar.png")
+bt_cadastrar = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-cadastrar.png")
 
 img_fundo = PhotoImage(file="Sistema\\imagens\\fundo-cadastrar.png")
 lab_fundo = Label(aba1, image=img_fundo)
@@ -147,7 +147,7 @@ aba1_LimparDados.place(x = 140, y = 475)
     gerenciadorAba.pack(expand=1, fill="both")
 
     #Elementos da Aba 2
-    fundo_visualizar = PhotoImage(file="Sistema\\imagens\\fundo-visualizar.png")
+    fundo_visualizar = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-visualizar.png")
     lab_fundo = Label(aba2, image=fundo_visualizar)
     lab_fundo.pack()
 
@@ -169,8 +169,8 @@ aba1_LimparDados.place(x = 140, y = 475)
     lab_fundo = Label(aba3, image=fundo_atualizar)
     lab_fundo.pack()
 
-    bt_limpar3 = PhotoImage(file="Sistema\\imagens\\bt-limpar.png")
-    bt_atualizar = PhotoImage(file="Sistema\\imagens\\bt-atualizar.png")
+    bt_limpar3 = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-limpar.png")
+    bt_atualizar = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-atualizar.png")
 
     aba3_CodigoEntry = Entry(aba3,bd=0,width=55)
     aba3_CodigoEntry.place(x = 269, y = 207)
@@ -203,8 +203,8 @@ aba1_LimparDados.place(x = 140, y = 475)
     aba4_CodigoEntry = Entry(aba4,bd=0)
     aba4_CodigoEntry.place(x = 304, y = 284,width=313, height=38)
 
-    bt_remover = PhotoImage(file="Sistema\\imagens\\bt-remover.png")
-    bt_limpar4 = PhotoImage(file="Sistema\\imagens\\bt-limpar.png")
+    bt_remover = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-remover.png")
+    bt_limpar4 = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-limpar.png")
 
     aba4_RemoverButton = Button(aba4, width=222, height=50, bd=0,bg="#000B37", image = bt_remover, command = remover_maquiagem )
     aba4_RemoverButton.place(x = 434 , y = 419)
@@ -234,7 +234,7 @@ esconda_senha = StringVar()
 
 # Importar imagens
 img_fundo = PhotoImage(file="Sistema\\imagens\\fundo-login2.png")
-img_botao = PhotoImage(file="Sistema\\imagens\\bt-login.png")
+img_botao = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-login.png")
 
 # Criação de labels
 lab_fundo = Label(TelaLogin, image=img_fundo)

@@ -20,7 +20,7 @@ class MaquiagensDAO:
         self.conexao.commit()
 
     def atualizar_maquiagens(self, maquiagens):
-        sql = f"update maquiagens set nome = '{maquiagens.getNome()}', marca = '{maquiagens.getMarca()}', preco = '{maquiagens.getPreço()}' where codigo = {maquiagens.getCodigo()}"
+        sql = f"update maquiagens set nome = '{maquiagens.getNome()}', estado = '{maquiagens.getEstado()}', preco = '{maquiagens.getPreço()}' where codigo = {maquiagens.getCodigo()}"
 
         self.cursor.execute(sql)
         self.conexao.commit()
@@ -33,6 +33,6 @@ class MaquiagensDAO:
             texto = ""
 
             for linha in resultado:
-                texto = texto + f"Código: {str(linha[0])} \nNome: {str(linha[1])} \nMarca: {str(linha[2])} \nPreço: {str(linha[3])} \n \n"
+                texto = texto + f"Código: {str(linha[0])} \nNome: {str(linha[1])} \nEstado: {str(linha[2])} \nPreço: {str(linha[3])} \n \n"
     
             return texto
