@@ -11,3 +11,9 @@ maq_dao = MaquiagensDAO()
 
 #Inserção na tabela:
 #maq_dao.inserir_maquiagem(r)
+
+#Remoção da tabela:
+#maq_dao.remover_maquiagem(r)
+
+#Atualização de dados na tabela:
+#maq_dao.atualizar_maquiagem(r)
