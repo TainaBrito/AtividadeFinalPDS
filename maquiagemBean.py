@@ -17,3 +17,9 @@ class MaquiagemBean:
 
     def getEstado(self):
         return self.__estado
+
+    def setCodigo(self, cod):
+        self.__codigo = cod
+        
+    def setNome(self, n):
+        self.__nome = n
