@@ -6,3 +6,8 @@ r.setCodigo(1110)
 r.setNome('Paleta de Sombras')
 r.setPreco('45,00')
 r.setEstado('Disponível')
+
+maq_dao = MaquiagensDAO()
+
+#Inserção na tabela:
+#maq_dao.inserir_maquiagem(r)

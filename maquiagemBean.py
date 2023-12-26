@@ -11,3 +11,9 @@ class MaquiagemBean:
 
     def getNome(self):
         return self.__nome
+
+    def getPreco(self):
+        return self.__preco
+
+    def getEstado(self):
+        return self.__estado
