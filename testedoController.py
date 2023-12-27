@@ -11,4 +11,7 @@ maquiagem_control = MaquiagemController()
 #Atualizar dados:
 #maquiagem_control.atualizar(1525, 'Batom', '12,00', 'Disponível para venda')
 
+#Visualizar dados:
+#print(maquiagem_control.visualizar())
+
 

@@ -17,3 +17,7 @@ maq_dao = MaquiagensDAO()
 
 #Atualização de dados na tabela:
 #maq_dao.atualizar_maquiagem(r)
+
+#Visualização da tabela:
+#maq_dao.visualizar()
+#print(maq_dao.visualizar())
