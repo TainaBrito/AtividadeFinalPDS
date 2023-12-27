@@ -1,19 +1,31 @@
-from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from datetime import date
 import time
-import customtkinter
+from customtkinter import *
+from tkinter import BitmapImage
+from PIL import Image,ImageTk
 import psycopg2
+from tkinter import * 
 
-TelaLogin = customtkinter.CTk()
+root = Tk()
+
+imagem = PhotoImage(file="Imagens\logotipo.jpeg")
+
+lb = Label(root, image=imagem)
+
+lb.place(x = 0, y = 20)
+
+root.mainloop()
+
+TelaLogin = tkinter.Tk()
 TelaLogin.title("TB Makes")
 TelaLogin.geometry("490x560+500+130")
-TelaLogin.iconbitmap("C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\logomarca.png")
+TelaLogin.iconbitmap(file="Imagens\logotipo.jpeg")
 TelaLogin.resizable(False, False)
 customtkinter.set_appearance_mode("Light")
 
-postgresql://postgres:admtbmakes@localhost:5432/postgres?schema=public
+#postgresql://postgres:admtbmakes@localhost:5432/postgres?schema=public
 
 
 #Funções
@@ -24,7 +36,7 @@ def JanelaPrincipal():
 
     janela = customtkinter.CTk()
     janela.title('TB Makes')
-    janela.iconbitmap('C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\logomarca.png')
+    janela.iconbitmap(file= '\Imagens\logotipo.jpeg')
     janela.resizable(False, False)
 
     gerenciadorAba = ttk.Notebook(janela)
@@ -35,20 +47,17 @@ conexão = abrir_conexão()
 def cadastrar_maquiagem():
         
      messagebox.showinfo(title="Sucesso!",message="A maquiagem foi cadastrada com sucesso!")
-
-        codigo = aba1_CodigoEntry.get()
-        nome = aba1_NomeEntry.get()
-        preco = aba1_PrecoEntry.get()
-        estado = aba1_EstadoEntry.get()
-
-        aba1_CodigoEntry.delete(0,'end')
-        aba1_NomeEntry.delete(0,'end')
-        aba1_PrecoEntry.delete(0,'end')
-        aba1_EstadoEntry.delete(0,'end')
-
-        sql1 = f"insert into Maquiagens values ({codigo},'{nome}','{preco}','{estado}', '{date.today()}')"
-        cursor.execute(sql1)
-        conexao.commit()
+     codigo = aba1_CodigoEntry.get()
+     nome = aba1_NomeEntry.get()
+     preco = aba1_PrecoEntry.get()
+     estado = aba1_EstadoEntry.get()
+     aba1_CodigoEntry.delete(0,'end')
+     aba1_NomeEntry.delete(0,'end')
+     aba1_PrecoEntry.delete(0,'end')
+     aba1_EstadoEntry.delete(0,'end')
+     sql1 = f"insert into Maquiagens values ({codigo},'{nome}','{preco}','{estado}', '{date.today()}')"
+     cursor.execute(sql1)
+     conexao.commit()
 
 #Remover Maquiagens
 def remover_maquiagem():
@@ -119,10 +128,10 @@ gerenciadorAba.add(aba1,text="  Cadastrar Maquiagem  ")
 gerenciadorAba.pack(expand=1, fill="both")
     
 #Elementos da Aba 1
-bt_limpar1 = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-limpar.png.jpeg")
-bt_cadastrar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-cadastrar.png.jpeg")
+bt_limpar1 = PhotoImage(file="\Imagens\botao-limpar.png.jpeg")
+bt_cadastrar = PhotoImage(file="\Imagens\botao-cadastrar.png.jpeg")
 
-img_fundo = PhotoImage(file="Sistema\\imagens\\fundo-cadastrar.png")
+img_fundo = PhotoImage(file="\Imagens\fundo-cadastrar.png.png")
 lab_fundo = Label(aba1, image=img_fundo)
 lab_fundo.pack()
 
@@ -144,78 +153,77 @@ aba1_LimparDados = Button(aba1,bd=0,bg="#000B37", width=222, height=60, image=bt
 aba1_LimparDados.place(x = 140, y = 475)
 
 #Aba2 - Visualizar Dados
-    aba2 = ttk.Frame(gerenciadorAba)
-    gerenciadorAba.add(aba2, text="  Visualizar Maquiagem  ")
-    gerenciadorAba.pack(expand=1, fill="both")
+aba2 = ttk.Frame(gerenciadorAba)
+gerenciadorAba.add(aba2, text="  Visualizar Maquiagem  ")
+gerenciadorAba.pack(expand=1, fill="both")
 
-    #Elementos da Aba 2
-    fundo_visualizar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\fundo-visualizar.png.png")
-    lab_fundo = Label(aba2, image=fundo_visualizar)
-    lab_fundo.pack()
+#Elementos da Aba 2
+fundo_visualizar = PhotoImage(file="\Imagens\fundo-visualizar.png.png")
+lab_fundo = Label(aba2, image=fundo_visualizar)
+lab_fundo.pack()
+bt_visualizar = PhotoImage(file="\Imagens\botao-visualizar.png.jpeg")
 
-    bt_visualizar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-visualizar.png.jpeg")
-
-    aba2_VisualizarButton = Button(aba2,bg="#000B37", width=236, height=50, image = bt_visualizar, bd=0, command = visualizar_maquiagem)
-    aba2_VisualizarButton.place(x = 102, y = 397)
-    aba2_Texto = Text(aba2,bd=5)
-    aba2_Texto.place(x = 453 , y = 95,width=280,height=410)
+aba2_VisualizarButton = Button(aba2,bg="#000B37", width=236, height=50, image = bt_visualizar, bd=0, command = visualizar_maquiagem)
+aba2_VisualizarButton.place(x = 102, y = 397)
+aba2_Texto = Text(aba2,bd=5)
+aba2_Texto.place(x = 453 , y = 95,width=280,height=410)
     
-    #Aba3 - Atualizar Produtos
-    aba3 = ttk.Frame(gerenciadorAba)
-    gerenciadorAba.add(aba3, text="  Atualizar Maquiagem  ")
-    gerenciadorAba.pack(expand=1, fill="both")
+#Aba3 - Atualizar Produtos
+aba3 = ttk.Frame(gerenciadorAba)
+gerenciadorAba.add(aba3, text="  Atualizar Maquiagem  ")
+gerenciadorAba.pack(expand=1, fill="both")
     
-    #Elementos da Aba 3
+#Elementos da Aba 3
     
-    fundo_atualizar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\fundo-atualizar.png.png")
-    lab_fundo = Label(aba3, image=fundo_atualizar)
-    lab_fundo.pack()
+fundo_atualizar = PhotoImage(file="\Imagens\fundo-atualizar.png.png")
+lab_fundo = Label(aba3, image=fundo_atualizar)
+lab_fundo.pack()
 
-    bt_limpar3 = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-limpar.png.jpeg")
-    bt_atualizar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-atualizar.png.jpeg")
+bt_limpar3 = PhotoImage(file="\Imagens\botao-limpar.png.jpeg")
+bt_atualizar = PhotoImage(file="\Imagens\botao-atualizar.png.jpeg")
 
-    aba3_CodigoEntry = Entry(aba3,bd=0,width=55)
-    aba3_CodigoEntry.place(x = 269, y = 207)
+aba3_CodigoEntry = Entry(aba3,bd=0,width=55)
+aba3_CodigoEntry.place(x = 269, y = 207)
 
-    aba3_NomeEntry = Entry(aba3,bd=0,width=55)
-    aba3_NomeEntry.place(x = 269, y = 271)
+aba3_NomeEntry = Entry(aba3,bd=0,width=55)
+aba3_NomeEntry.place(x = 269, y = 271)
 
-    aba3_PrecoEntry = Entry(aba3,bd=0,width=55)
-    aba3_PrecoEntry.place(x = 269, y = 335)
+aba3_PrecoEntry = Entry(aba3,bd=0,width=55)
+aba3_PrecoEntry.place(x = 269, y = 335)
 
-    aba3_EstadoEntry = Entry(aba3,bd=0,width=55)
-    aba3_EstadoEntry.place(x = 269 , y = 399)
+aba3_EstadoEntry = Entry(aba3,bd=0,width=55)
+aba3_EstadoEntry.place(x = 269 , y = 399)
 
-    aba3_AtualizarButton = Button(aba3,bd=0,bg="#000B37", width=222, height=60, image=bt_atualizar, command = atualizar_maquiagem)
-    aba3_AtualizarButton.place(x = 430 , y = 475)
-    aba3_LimparDados = Button(aba3,bd=0,bg="#000B37", width=222, height=60, image=bt_limpar3, command = Limpar_aba3)
-    aba3_LimparDados.place(x = 140, y = 475)
+aba3_AtualizarButton = Button(aba3,bd=0,bg="#000B37", width=222, height=60, image=bt_atualizar, command = atualizar_maquiagem)
+aba3_AtualizarButton.place(x = 430 , y = 475)
+aba3_LimparDados = Button(aba3,bd=0,bg="#000B37", width=222, height=60, image=bt_limpar3, command = Limpar_aba3)
+aba3_LimparDados.place(x = 140, y = 475)
     
-    #Aba4 - Remover Maquiagens
-    aba4 = ttk.Frame(gerenciadorAba)
-    gerenciadorAba.add(aba4, text="Remover Maquiagem")
-    gerenciadorAba.pack(expand=1, fill="both")
+#Aba4 - Remover Maquiagens
+aba4 = ttk.Frame(gerenciadorAba)
+gerenciadorAba.add(aba4, text="Remover Maquiagem")
+gerenciadorAba.pack(expand=1, fill="both")
 
-    fundo_remover = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\fundo-remover.png.png")
-    lab_fundo = Label(aba4, image=fundo_remover)
-    lab_fundo.pack()
+fundo_remover = PhotoImage(file="\Imagens\fundo-remover.png.png")
+lab_fundo = Label(aba4, image=fundo_remover)
+lab_fundo.pack()
 
-    #Elementos da Aba 4
+#Elementos da Aba 4
     
-    aba4_CodigoEntry = Entry(aba4,bd=0)
-    aba4_CodigoEntry.place(x = 304, y = 284,width=313, height=38)
+aba4_CodigoEntry = Entry(aba4,bd=0)
+aba4_CodigoEntry.place(x = 304, y = 284,width=313, height=38)
 
-    bt_remover = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-deletar.png.jpeg")
-    bt_limpar4 = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-limpar.png.jpeg")
+bt_remover = PhotoImage(file="\Imagens\botao-deletar.png.jpeg")
+bt_limpar4 = PhotoImage(file="\Imagens\botao-limpar.png.jpeg")
 
-    aba4_RemoverButton = Button(aba4, width=222, height=50, bd=0,bg="#000B37", image = bt_remover, command = remover_maquiagem )
-    aba4_RemoverButton.place(x = 434 , y = 419)
-    aba4_LimparDados = Button(aba4,width=222, height=50, bd=0,bg="#000B37", image = bt_limpar4 , command = Limpar_aba4)
-    aba4_LimparDados.place(x = 144, y = 419)
+aba4_RemoverButton = Button(aba4, width=222, height=50, bd=0,bg="#000B37", image = bt_remover, command = remover_maquiagem )
+aba4_RemoverButton.place(x = 434 , y = 419)
+aba4_LimparDados = Button(aba4,width=222, height=50, bd=0,bg="#000B37", image = bt_limpar4 , command = Limpar_aba4)
+aba4_LimparDados.place(x = 144, y = 419)
 
-    #Definir as dimensões da janela
-    janela.geometry("800x600+300+100")
-    janela.mainloop()
+#Definir as dimensões da janela
+janela.geometry("800x600+300+100")
+janela.mainloop()
   
 def Login():
     tbsenha = "admin"
@@ -235,8 +243,8 @@ def Login():
 esconda_senha = StringVar()
 
 # Importar imagens
-img_fundo = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\fundo-login.png.png")
-img_botao = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-login.png.jpeg")
+img_fundo = PhotoImage(file="\Imagens\fundo-login.png.png")
+img_botao = PhotoImage(file="\Imagens\botao-login.png.jpeg")
 
 # Criação de labels
 lab_fundo = Label(TelaLogin, image=img_fundo)
