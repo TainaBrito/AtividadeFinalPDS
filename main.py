@@ -9,7 +9,7 @@ import psycopg2
 TelaLogin = customtkinter.CTk()
 TelaLogin.title("TB Makes")
 TelaLogin.geometry("490x560+500+130")
-TelaLogin.iconbitmap('C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\logomarca.png')
+TelaLogin.iconbitmap("C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\logomarca.png")
 TelaLogin.resizable(False, False)
 customtkinter.set_appearance_mode("Light")
 
