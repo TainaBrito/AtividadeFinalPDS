@@ -26,7 +26,7 @@ def JanelaPrincipal():
 
     gerenciadorAba = ttk.Notebook(janela)
 
-   conexão = abrir conexão()
+conexão = abrir_conexão()
     
 #Cadastrar Maquiagens na Tabela
 def cadastrar_maquiagem():
