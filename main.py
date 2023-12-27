@@ -9,7 +9,7 @@ import psycopg2
 TelaLogin = customtkinter.CTk()
 TelaLogin.title("TB Makes")
 TelaLogin.geometry("490x560+500+130")
-TelaLogin.iconbitmap('Imagens\\image.png')
+TelaLogin.iconbitmap('C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\logomarca.png')
 TelaLogin.resizable(False, False)
 customtkinter.set_appearance_mode("Light")
 
@@ -21,7 +21,7 @@ def JanelaPrincipal():
 
     janela = customtkinter.CTk()
     janela.title('TB Makes')
-    janela.iconbitmap('Imagens\\image.png')
+    janela.iconbitmap('C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\logomarca.png')
     janela.resizable(False, False)
 
     gerenciadorAba = ttk.Notebook(janela)
@@ -116,8 +116,8 @@ gerenciadorAba.add(aba1,text="  Cadastrar Maquiagem  ")
 gerenciadorAba.pack(expand=1, fill="both")
     
 #Elementos da Aba 1
-bt_limpar1 = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-limpar.png")
-bt_cadastrar = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-cadastrar.png")
+bt_limpar1 = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-limpar.png.jpeg")
+bt_cadastrar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-cadastrar.png.jpeg")
 
 img_fundo = PhotoImage(file="Sistema\\imagens\\fundo-cadastrar.png")
 lab_fundo = Label(aba1, image=img_fundo)
@@ -146,11 +146,11 @@ aba1_LimparDados.place(x = 140, y = 475)
     gerenciadorAba.pack(expand=1, fill="both")
 
     #Elementos da Aba 2
-    fundo_visualizar = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-visualizar.png")
+    fundo_visualizar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\fundo-visualizar.png.png")
     lab_fundo = Label(aba2, image=fundo_visualizar)
     lab_fundo.pack()
 
-    bt_visualizar = PhotoImage(file="Sistema\\imagens\\bt-visualizar.png")
+    bt_visualizar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-visualizar.png.jpeg")
 
     aba2_VisualizarButton = Button(aba2,bg="#000B37", width=236, height=50, image = bt_visualizar, bd=0, command = visualizar_maquiagem)
     aba2_VisualizarButton.place(x = 102, y = 397)
@@ -164,12 +164,12 @@ aba1_LimparDados.place(x = 140, y = 475)
     
     #Elementos da Aba 3
     
-    fundo_atualizar = PhotoImage(file="Sistema\\imagens\\fundo-atualizar.png")
+    fundo_atualizar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\fundo-atualizar.png.png")
     lab_fundo = Label(aba3, image=fundo_atualizar)
     lab_fundo.pack()
 
-    bt_limpar3 = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-limpar.png")
-    bt_atualizar = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-atualizar.png")
+    bt_limpar3 = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-limpar.png.jpeg")
+    bt_atualizar = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-atualizar.png.jpeg")
 
     aba3_CodigoEntry = Entry(aba3,bd=0,width=55)
     aba3_CodigoEntry.place(x = 269, y = 207)
@@ -193,7 +193,7 @@ aba1_LimparDados.place(x = 140, y = 475)
     gerenciadorAba.add(aba4, text="Remover Maquiagem")
     gerenciadorAba.pack(expand=1, fill="both")
 
-    fundo_remover = PhotoImage(file="Sistema\\imagens\\fundo-remover.png")
+    fundo_remover = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\fundo-remover.png.png")
     lab_fundo = Label(aba4, image=fundo_remover)
     lab_fundo.pack()
 
@@ -202,8 +202,8 @@ aba1_LimparDados.place(x = 140, y = 475)
     aba4_CodigoEntry = Entry(aba4,bd=0)
     aba4_CodigoEntry.place(x = 304, y = 284,width=313, height=38)
 
-    bt_remover = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-remover.png")
-    bt_limpar4 = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-limpar.png")
+    bt_remover = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-deletar.png.jpeg")
+    bt_limpar4 = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-limpar.png.jpeg")
 
     aba4_RemoverButton = Button(aba4, width=222, height=50, bd=0,bg="#000B37", image = bt_remover, command = remover_maquiagem )
     aba4_RemoverButton.place(x = 434 , y = 419)
@@ -232,8 +232,8 @@ def Login():
 esconda_senha = StringVar()
 
 # Importar imagens
-img_fundo = PhotoImage(file="Sistema\\imagens\\fundo-login2.png")
-img_botao = PhotoImage(file="Sistema\\imagens\\C:\Users\20201214010015\Downloads\bt-login.png")
+img_fundo = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\fundo-login.png.png")
+img_botao = PhotoImage(file="C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\botao-login.png.jpeg")
 
 # Criação de labels
 lab_fundo = Label(TelaLogin, image=img_fundo)
