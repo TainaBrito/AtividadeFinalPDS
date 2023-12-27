@@ -3,8 +3,6 @@ from tkinter import messagebox
 from datetime import date
 import time
 from customtkinter import *
-from tkinter import BitmapImage
-from PIL import Image,ImageTk
 import psycopg2
 from tkinter import * 
 
@@ -21,7 +19,7 @@ root.mainloop()
 TelaLogin = tkinter.Tk()
 TelaLogin.title("TB Makes")
 TelaLogin.geometry("490x560+500+130")
-TelaLogin.iconbitmap(file="Imagens\logotipo.jpeg")
+TelaLogin.iconbitmap(file="\Imagens\logotipo.jpeg")
 TelaLogin.resizable(False, False)
 customtkinter.set_appearance_mode("Light")
 
