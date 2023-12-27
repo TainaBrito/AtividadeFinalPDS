@@ -13,6 +13,9 @@ TelaLogin.iconbitmap('C:\Users\20201214010015\.vscode\AtividadeFinalPDS\Imagens\
 TelaLogin.resizable(False, False)
 customtkinter.set_appearance_mode("Light")
 
+postgresql://postgres:admtbmakes@localhost:5432/postgres?schema=public
+
+
 #Funções
 def JanelaPrincipal():
 
