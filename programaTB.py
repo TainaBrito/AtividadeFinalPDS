@@ -4,7 +4,6 @@ class MaquiagensDAO:
 
     def _init_(self):
         self.conexao = psycopg2.connect(database="postgres", user="postgres", password="admtbmakes", host="localhost", port="5432")
-
         self.cursor = self.conexao.cursor()
 
     def inserir_maquiagens(self, maquiagens):
