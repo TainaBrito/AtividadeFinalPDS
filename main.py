@@ -6,25 +6,12 @@ from customtkinter import *
 import psycopg2
 from tkinter import * 
 
-root = Tk()
-
-imagem = PhotoImage(file="Imagens\logotipo.jpeg")
-
-lb = Label(root, image=imagem)
-
-lb.place(x = 0, y = 20)
-
-root.mainloop()
-
 TelaLogin = tkinter.Tk()
 TelaLogin.title("TB Makes")
 TelaLogin.geometry("490x560+500+130")
-TelaLogin.iconbitmap(file="\Imagens\logotipo.jpeg")
+TelaLogin.iconbitmap("\Imagens\logotipo.jpeg")
 TelaLogin.resizable(False, False)
 customtkinter.set_appearance_mode("Light")
-
-#postgresql://postgres:admtbmakes@localhost:5432/postgres?schema=public
-
 
 #Funções
 def JanelaPrincipal():
@@ -39,7 +26,9 @@ def JanelaPrincipal():
 
     gerenciadorAba = ttk.Notebook(janela)
 
-conexão = abrir_conexão()
+conexao = psycopg2.connect(database="postgres", user="postgres", password="admtbmakes", host="localhost", port="5432")
+cursor = conexao.cursor()
+    
     
 #Cadastrar Maquiagens na Tabela
 def cadastrar_maquiagem():

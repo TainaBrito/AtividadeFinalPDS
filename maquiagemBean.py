@@ -23,3 +23,10 @@ class MaquiagemBean:
         
     def setNome(self, n):
         self.__nome = n
+
+    def setPreco(self, p):
+        self.__preco = p
+
+    def setEstado(self, est):
+        self.__estado = est
+
