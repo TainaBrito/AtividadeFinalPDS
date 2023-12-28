@@ -1,5 +1,4 @@
-from tkinter import ttk
-from tkinter import messagebox
+from tkinter import ttk, messagebox
 from datetime import date
 import time
 import customtkinter 
@@ -199,8 +198,7 @@ fundo_remover = PhotoImage(file="Imagens//fundo-remover.png.png")
 lab_fundo = Label(aba4, image=fundo_remover)
 lab_fundo.pack()
 
-#Elementos da Aba 4
-    
+    #Elementos da Aba 4
 aba4_CodigoEntry = Entry(aba4,bd=0)
 aba4_CodigoEntry.place(x = 304, y = 284,width=313, height=38)
 
@@ -214,6 +212,8 @@ aba4_LimparDados.place(x = 144, y = 419)
 
 #Definir as dimensões da janela
 janela.geometry("800x600+300+100") 
+
+#Loop Principal
 janela.mainloop()
   
 def Login():
