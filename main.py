@@ -26,7 +26,7 @@ def JanelaPrincipal():
 gerenciadorAba = ttk.Notebook(janela)
 
 try:
-    conexao = psycopg2.connect(database="postgres", user="postgres", password="admtbmakes", host="localhost", port="5432")
+    conexao = psycopg2.connect(database="temp", user="aluno_20201214010015", password="121241", host="177.136.201.182", port="5439")
     cursor = conexao.cursor()
 except Exception as e:
     print(f"Erro ao conectar ao banco de dados: {e}")
