@@ -3,30 +3,30 @@ import psycopg2
 class MaquiagensDAO:
 
     def _init_(self):
-        self.conexao = psycopg2.connect(database="postgres", user="postgres", password="admtbmakes", host="localhost", port="5432")
-        
+        self.conexao = psycopg2.connect(database="temp", user="aluno_20201214010015", password="121241", host="177.136.201.182", port="5439")
+
         self.cursor = self.conexao.cursor()
 
-    def inserir_maquiagens(self, maquiagens):
-        sql = f"insert into maquiagens values ({maquiagens.getCodigo()}, '{maquiagens.getNome()}', '{maquiagens.getPreco()}', '{maquiagens.getEstado()}')"
+    def inserir_maquiagens(self, Maquiagens):
+        sql = f"insert into Maquiagens values ({Maquiagens.getCodigo()}, '{Maquiagens.getNome()}', '{Maquiagens.getPreco()}', '{Maquiagens.getEstado()}')"
 
         self.cursor.execute(sql)
         self.conexao.commit()
 
-    def remover_maquiagens(self,maquiagens):
-        sql = f"delete from maquiagens where codigo = {maquiagens.getCodigo()}"
+    def remover_maquiagens(self,Maquiagens):
+        sql = f"delete from Maquiagens where codigo = {Maquiagens.getCodigo()}"
 
         self.cursor.execute(sql)
         self.conexao.commit()
 
-    def atualizar_maquiagens(self, maquiagens):
-        sql = f"update maquiagens set nome = '{maquiagens.getNome()}', estado = '{maquiagens.getEstado()}', preco = '{maquiagens.getPreço()}' where codigo = {maquiagens.getCodigo()}"
+    def atualizar_maquiagens(self, Maquiagens):
+        sql = f"update Maquiagens set nome = '{Maquiagens.getNome()}', estado = '{Maquiagens.getEstado()}', preco = '{Maquiagens.getPreço()}' where codigo = {Maquiagens.getCodigo()}"
 
         self.cursor.execute(sql)
         self.conexao.commit()
         
     def visualizar(self):
-            sql = "select * from maquiagens"
+            sql = "select * from Maquiagens"
             self.cursor.execute(sql)
 
             resultado = self.cursor.fetchall()
