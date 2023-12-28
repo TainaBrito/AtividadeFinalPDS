@@ -2,14 +2,14 @@ from tkinter import ttk
 from tkinter import messagebox
 from datetime import date
 import time
-from customtkinter import *
+import customtkinter 
 import psycopg2
 from tkinter import * 
 
-TelaLogin = tkinter.Tk()
+TelaLogin = customtkinter.CTk()
 TelaLogin.title("TB Makes")
 TelaLogin.geometry("490x560+500+130")
-TelaLogin.iconbitmap("\Imagens\logotipo.jpeg")
+TelaLogin.iconbitmap("Imagens//logotipo.jpeg")
 TelaLogin.resizable(False, False)
 customtkinter.set_appearance_mode("Light")
 
@@ -21,23 +21,27 @@ def JanelaPrincipal():
 
     janela = customtkinter.CTk()
     janela.title('TB Makes')
-    janela.iconbitmap(file= '\Imagens\logotipo.jpeg')
+    janela.iconbitmap("Imagens//logotipo.jpeg")
     janela.resizable(False, False)
 
-    gerenciadorAba = ttk.Notebook(janela)
+gerenciadorAba = ttk.Notebook(janela)
 
-conexao = psycopg2.connect(database="postgres", user="postgres", password="admtbmakes", host="localhost", port="5432")
-cursor = conexao.cursor()
-    
+try:
+    conexao = psycopg2.connect(database="postgres", user="postgres", password="admtbmakes", host="localhost", port="5432")
+    cursor = conexao.cursor()
+except Exception as e:
+    print(f"Erro ao conectar ao banco de dados: {e}")
     
 #Cadastrar Maquiagens na Tabela
 def cadastrar_maquiagem():
         
      messagebox.showinfo(title="Sucesso!",message="A maquiagem foi cadastrada com sucesso!")
+     
      codigo = aba1_CodigoEntry.get()
      nome = aba1_NomeEntry.get()
      preco = aba1_PrecoEntry.get()
      estado = aba1_EstadoEntry.get()
+     
      aba1_CodigoEntry.delete(0,'end')
      aba1_NomeEntry.delete(0,'end')
      aba1_PrecoEntry.delete(0,'end')
@@ -115,10 +119,10 @@ gerenciadorAba.add(aba1,text="  Cadastrar Maquiagem  ")
 gerenciadorAba.pack(expand=1, fill="both")
     
 #Elementos da Aba 1
-bt_limpar1 = PhotoImage(file="\Imagens\botao-limpar.png.jpeg")
-bt_cadastrar = PhotoImage(file="\Imagens\botao-cadastrar.png.jpeg")
+bt_limpar1 = PhotoImage(file="Imagens//botao-limpar.png.jpeg")
+bt_cadastrar = PhotoImage(file="Imagens//botao-cadastrar.png.jpeg")
 
-img_fundo = PhotoImage(file="\Imagens\fundo-cadastrar.png.png")
+img_fundo = PhotoImage(file="Imagens//fundo-cadastrar.png.png")
 lab_fundo = Label(aba1, image=img_fundo)
 lab_fundo.pack()
 
@@ -145,10 +149,10 @@ gerenciadorAba.add(aba2, text="  Visualizar Maquiagem  ")
 gerenciadorAba.pack(expand=1, fill="both")
 
 #Elementos da Aba 2
-fundo_visualizar = PhotoImage(file="\Imagens\fundo-visualizar.png.png")
+fundo_visualizar = PhotoImage(file="Imagens//fundo-visualizar.png.png")
 lab_fundo = Label(aba2, image=fundo_visualizar)
 lab_fundo.pack()
-bt_visualizar = PhotoImage(file="\Imagens\botao-visualizar.png.jpeg")
+bt_visualizar = PhotoImage(file="Imagens//botao-visualizar.png.jpeg")
 
 aba2_VisualizarButton = Button(aba2,bg="#000B37", width=236, height=50, image = bt_visualizar, bd=0, command = visualizar_maquiagem)
 aba2_VisualizarButton.place(x = 102, y = 397)
@@ -162,12 +166,12 @@ gerenciadorAba.pack(expand=1, fill="both")
     
 #Elementos da Aba 3
     
-fundo_atualizar = PhotoImage(file="\Imagens\fundo-atualizar.png.png")
+fundo_atualizar = PhotoImage(file="Imagens//fundo-atualizar.png.png")
 lab_fundo = Label(aba3, image=fundo_atualizar)
 lab_fundo.pack()
 
-bt_limpar3 = PhotoImage(file="\Imagens\botao-limpar.png.jpeg")
-bt_atualizar = PhotoImage(file="\Imagens\botao-atualizar.png.jpeg")
+bt_limpar3 = PhotoImage(file="Imagens//botao-limpar.png.jpeg")
+bt_atualizar = PhotoImage(file="Imagens//botao-atualizar.png.jpeg")
 
 aba3_CodigoEntry = Entry(aba3,bd=0,width=55)
 aba3_CodigoEntry.place(x = 269, y = 207)
@@ -191,7 +195,7 @@ aba4 = ttk.Frame(gerenciadorAba)
 gerenciadorAba.add(aba4, text="Remover Maquiagem")
 gerenciadorAba.pack(expand=1, fill="both")
 
-fundo_remover = PhotoImage(file="\Imagens\fundo-remover.png.png")
+fundo_remover = PhotoImage(file="Imagens//fundo-remover.png.png")
 lab_fundo = Label(aba4, image=fundo_remover)
 lab_fundo.pack()
 
@@ -200,8 +204,8 @@ lab_fundo.pack()
 aba4_CodigoEntry = Entry(aba4,bd=0)
 aba4_CodigoEntry.place(x = 304, y = 284,width=313, height=38)
 
-bt_remover = PhotoImage(file="\Imagens\botao-deletar.png.jpeg")
-bt_limpar4 = PhotoImage(file="\Imagens\botao-limpar.png.jpeg")
+bt_remover = PhotoImage(file="Imagens//botao-deletar.png.jpeg")
+bt_limpar4 = PhotoImage(file="Imagens//botao-limpar.png.jpeg")
 
 aba4_RemoverButton = Button(aba4, width=222, height=50, bd=0,bg="#000B37", image = bt_remover, command = remover_maquiagem )
 aba4_RemoverButton.place(x = 434 , y = 419)
@@ -209,7 +213,7 @@ aba4_LimparDados = Button(aba4,width=222, height=50, bd=0,bg="#000B37", image = 
 aba4_LimparDados.place(x = 144, y = 419)
 
 #Definir as dimensões da janela
-janela.geometry("800x600+300+100")
+janela.geometry("800x600+300+100") 
 janela.mainloop()
   
 def Login():
@@ -230,8 +234,8 @@ def Login():
 esconda_senha = StringVar()
 
 # Importar imagens
-img_fundo = PhotoImage(file="\Imagens\fundo-login.png.png")
-img_botao = PhotoImage(file="\Imagens\botao-login.png.jpeg")
+img_fundo = PhotoImage(file="Imagens//fundo-login.png.png")
+img_botao = PhotoImage(file="Imagens//botao-login.png.jpeg")
 
 # Criação de labels
 lab_fundo = Label(TelaLogin, image=img_fundo)
