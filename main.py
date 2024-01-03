@@ -113,6 +113,8 @@ def visualizar_maquiagem():
     aba2_Texto.insert(END, texto)
 
 #Aba 1- Cadastrar Maquiagem
+
+gerenciadorAba = ttk.Notebook(janela)
 aba1 = ttk.Frame(gerenciadorAba)
 gerenciadorAba.add(aba1,text="  Cadastrar Maquiagem  ")
 gerenciadorAba.pack(expand=1, fill="both")
