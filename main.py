@@ -23,7 +23,7 @@ def JanelaPrincipal():
     janela.iconbitmap("Imagens//logotipo.jpeg")
     janela.resizable(False, False)
 
-gerenciadorAba = ttk.Notebook(janela)
+    gerenciadorAba = ttk.Notebook(janela)
 
 try:
     conexao = psycopg2.connect(database="temp", user="aluno_20201214010015", password="121241", host="177.136.201.182", port="5439")
