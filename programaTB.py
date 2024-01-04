@@ -3,7 +3,7 @@ import psycopg2
 class MaquiagensDAO:
 
     def _init_(self):
-        self.conexao = psycopg2.connect(database="temp", user="aluno_20201214010015", password="121241", host="177.136.201.182", port="5439")
+        self.conexao = psycopg2.connect(database="temp", user="aluno_20201214010015", password="1212", host="177.136.200.206", port="5439")
 
         self.cursor = self.conexao.cursor()
 
